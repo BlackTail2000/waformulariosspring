@@ -21,8 +21,12 @@ public class LoginController {
             , Model model){
         if(loginModel.getUsuario().equals("lsalvatierra") &&
         loginModel.getPassword().equals("123")) {
+            model.addAttribute("mensaje", "Bienvenido: "
+                    + loginModel.getUsuario());
             return "home";
         }
+        model.addAttribute("mensaje",
+                "Usuario y/o password incorrectos");
         return "login";
     }
 }

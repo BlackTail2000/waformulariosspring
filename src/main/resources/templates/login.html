@@ -11,21 +11,22 @@
             AUTENTICACIÓN
         </div>
         <div class="card-body">
-            <form>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <form th:action="@{/login}" method="post" th:object="${loginModel}">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="txtusuario"
+                           placeholder="name@example.com" th:field="*{usuario}">
+                    <label for="txtusuario">Usuario</label>
                 </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="txtpassword"
+                           placeholder="Password" th:field="*{password}">
+                    <label for="txtpassword">Password</label>
                 </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <hr/>
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+                <div class="alert alert-danger" role="alert">
+
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>

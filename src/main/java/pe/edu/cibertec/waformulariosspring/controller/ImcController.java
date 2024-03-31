@@ -16,7 +16,7 @@ public class ImcController {
         return "imc";
     }
 
-    @PostMapping("/")
+    @PostMapping("/imc")
     public String calcularImc(@ModelAttribute("imcModel") ImcModel imcModel
     , Model model) {
         double tallam = imcModel.getTalla() / 100;
